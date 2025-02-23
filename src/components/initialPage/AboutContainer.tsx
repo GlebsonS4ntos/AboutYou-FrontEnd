@@ -27,18 +27,25 @@ export default function AboutContainer() {
 
   return (
     <div className="h-full w-full relative flex flex-col items-center justify-between overflow-hidden space-y-4">
-      <div className="m-10 flex justify-center items-center gap-10">
-        <Logo width={100} height={90} />
+      <div className={`m-10 flex ${showLogoAnimate ? "justify-between" : "justify-center"}  items-center w-full max-w-4xl`}>
+        {/* Container do Logo - metade esquerda */}
+      <div className={`${showLogoAnimate? "w-1/2 flex justify-center items-center ":""} h-24`}>
+          <Logo width={100} height={90} />
+        </div>
+
+        {/* Container do Texto Animado - metade direita */}
         {showLogoAnimate ? (
-          <TitleAnimated
-            words={words}
-            cursor={true}
-            loop={1}
-            cursorStyle="_"
-            deleteSpeed={20}
-            typeSpeed={40}
-            fontSize="text-xl"
-          />
+          <div className="w-1/2 overflow-hidden">
+            <TitleAnimated
+              words={words}
+              cursor={true}
+              loop={1}
+              cursorStyle="_"
+              deleteSpeed={20}
+              typeSpeed={40}
+              fontSize="text-xl"
+            />
+          </div>
         ) : null}
       </div>
 
