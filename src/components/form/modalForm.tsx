@@ -196,6 +196,7 @@ export default function ModalForm({
       setError(
         "Erro ao enviar formulário, verifique se os campos foram preenchidos corretamente."
       );
+      console.log(error);
     } finally {
       setIsSubmitting(false);
     }

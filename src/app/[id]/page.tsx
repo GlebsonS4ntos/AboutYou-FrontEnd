@@ -14,6 +14,7 @@ export default function Page({ params }: { params: Promise<{ id: string }> }) {
   const paramsId = use(params);
   const [isMobile, setIsMobile] = useState(false);
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768);
