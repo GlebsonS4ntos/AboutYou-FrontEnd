@@ -31,7 +31,7 @@ export default function CopyButton({
   const [showToast, setShowToast] = useState(false);
 
   const handleCopy = async () => {
-    await navigator.clipboard.writeText(`${process.env.NEXT_PUBLIC_BASE_URL}/${infoId}`);
+    await navigator.clipboard.writeText(`${window.location.origin}/${infoId}`);
     setIsCopied(true);
     setShowToast(true);
 
