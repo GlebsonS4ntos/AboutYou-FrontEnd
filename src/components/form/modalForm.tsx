@@ -118,18 +118,18 @@ export default function ModalForm({
       errors.profession = "A profissão é obrigatória";
     } else if (
       formData.profession.trim().length < 3 ||
-      formData.profession.trim().length > 15
+      formData.profession.trim().length > 20
     ) {
-      errors.profession = "A profissão deve ter entre 3 e 15 caracteres";
+      errors.profession = "A profissão deve ter entre 3 e 20 caracteres";
     }
 
     if (!formData.description.trim()) {
       errors.description = "A descrição é obrigatória";
     } else if (
       formData.description.length < 20 ||
-      formData.description.length > 200
+      formData.description.length > 500
     ) {
-      errors.description = "A descrição deve ter entre 20 e 200 caracteres";
+      errors.description = "A descrição deve ter entre 20 e 500 caracteres";
     }
 
     if (!formData.email.trim()) {
@@ -325,7 +325,7 @@ export default function ModalForm({
 
           <div>
             <label className="block text-sm font-medium text-gray-300">
-              Profissão* (3-15 caracteres)
+              Profissão* (3-20 caracteres)
             </label>
             <input
               type="text"
@@ -367,7 +367,7 @@ export default function ModalForm({
 
           <div>
             <label className="block text-sm font-medium text-gray-300">
-              Descrição* (20-200 caracteres)
+              Descrição* (20-500 caracteres)
             </label>
             <textarea
               name="description"
@@ -385,7 +385,7 @@ export default function ModalForm({
               </p>
             )}
             <p className="text-xs text-gray-500 mt-1">
-              {formData.description.length}/200 caracteres
+              {formData.description.length}/500 caracteres
             </p>
           </div>
         </div>
