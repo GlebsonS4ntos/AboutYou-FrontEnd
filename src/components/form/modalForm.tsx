@@ -90,6 +90,16 @@ export default function ModalForm({
           image: "A imagem deve ter no máximo 5MB",
         }));
         return;
+      } else if (
+        selectedFile.type !== "image/jpeg" &&
+        selectedFile.type !== "image/png" &&
+        selectedFile.type !== "image/jpg"
+      ) {
+        setValidationErrors((prev) => ({
+          ...prev,
+          image: "A imagem deve ser no formato PNG, JPG ou JPEG.",
+        }));
+        return;
       }
 
       const imageUrl = URL.createObjectURL(selectedFile);
